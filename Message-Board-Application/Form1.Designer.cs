@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label28 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -85,34 +86,14 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.text1 = new System.Windows.Forms.Label();
+            this.btnSettings = new System.Windows.Forms.PictureBox();
             this.text2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.displayLabel1 = new System.Windows.Forms.Label();
-            this.displayLabel2 = new System.Windows.Forms.Label();
-            this.displayLabel3 = new System.Windows.Forms.Label();
-            this.displayLabel5 = new System.Windows.Forms.Label();
-            this.displayLabel4 = new System.Windows.Forms.Label();
-            this.btnControl = new System.Windows.Forms.Button();
-            this.cbLedStyle = new System.Windows.Forms.ComboBox();
-            this.btnLedOnColor = new System.Windows.Forms.Button();
-            this.btnLedOffColor = new System.Windows.Forms.Button();
-            this.text1Label1 = new System.Windows.Forms.Label();
-            this.text1Label2 = new System.Windows.Forms.Label();
-            this.text1Label3 = new System.Windows.Forms.Label();
-            this.text1Label4 = new System.Windows.Forms.Label();
-            this.text1Label5 = new System.Windows.Forms.Label();
-            this.dirT1 = new System.Windows.Forms.ComboBox();
-            this.speedT1 = new System.Windows.Forms.ComboBox();
-            this.tbT1 = new System.Windows.Forms.TextBox();
-            this.xPosT1 = new System.Windows.Forms.NumericUpDown();
-            this.yPosT1 = new System.Windows.Forms.NumericUpDown();
-            this.text1Label6 = new System.Windows.Forms.Label();
-            this.btnResetT1 = new System.Windows.Forms.Button();
-            this.numTimerPeriod = new System.Windows.Forms.NumericUpDown();
+            this.text1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label58 = new System.Windows.Forms.Label();
             this.btnResetT2 = new System.Windows.Forms.Button();
             this.text2Label6 = new System.Windows.Forms.Label();
             this.yPosT2 = new System.Windows.Forms.NumericUpDown();
@@ -125,22 +106,44 @@
             this.text2Label3 = new System.Windows.Forms.Label();
             this.text2Label2 = new System.Windows.Forms.Label();
             this.text2Label1 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label57 = new System.Windows.Forms.Label();
+            this.btnResetT1 = new System.Windows.Forms.Button();
+            this.text1Label6 = new System.Windows.Forms.Label();
+            this.yPosT1 = new System.Windows.Forms.NumericUpDown();
+            this.xPosT1 = new System.Windows.Forms.NumericUpDown();
+            this.tbT1 = new System.Windows.Forms.TextBox();
+            this.speedT1 = new System.Windows.Forms.ComboBox();
+            this.dirT1 = new System.Windows.Forms.ComboBox();
+            this.text1Label5 = new System.Windows.Forms.Label();
+            this.text1Label4 = new System.Windows.Forms.Label();
+            this.text1Label3 = new System.Windows.Forms.Label();
+            this.text1Label2 = new System.Windows.Forms.Label();
+            this.text1Label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numTimerPeriod = new System.Windows.Forms.NumericUpDown();
+            this.btnLedOffColor = new System.Windows.Forms.Button();
+            this.btnLedOnColor = new System.Windows.Forms.Button();
+            this.cbLedStyle = new System.Windows.Forms.ComboBox();
+            this.btnControl = new System.Windows.Forms.Button();
+            this.displayLabel4 = new System.Windows.Forms.Label();
+            this.displayLabel5 = new System.Windows.Forms.Label();
+            this.displayLabel3 = new System.Windows.Forms.Label();
+            this.displayLabel2 = new System.Windows.Forms.Label();
+            this.displayLabel1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xPosT1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yPosT1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTimerPeriod)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yPosT2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xPosT2)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yPosT1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xPosT1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimerPeriod)).BeginInit();
             this.SuspendLayout();
             // 
             // label28
@@ -593,6 +596,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.text2);
             this.panel1.Controls.Add(this.text1);
             this.panel1.Controls.Add(this.label29);
@@ -657,27 +661,17 @@
             this.panel1.Size = new System.Drawing.Size(1264, 495);
             this.panel1.TabIndex = 29;
             // 
-            // panel2
+            // btnSettings
             // 
-            this.panel2.Controls.Add(this.groupBox3);
-            this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 501);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1264, 180);
-            this.panel2.TabIndex = 30;
-            // 
-            // text1
-            // 
-            this.text1.AutoSize = true;
-            this.text1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.text1.ForeColor = System.Drawing.Color.Tomato;
-            this.text1.Location = new System.Drawing.Point(515, 117);
-            this.text1.Name = "text1";
-            this.text1.Size = new System.Drawing.Size(286, 31);
-            this.text1.TabIndex = 57;
-            this.text1.Text = "Piri Reis Üniversitesi";
+            this.btnSettings.BackColor = System.Drawing.Color.White;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.Location = new System.Drawing.Point(3, 457);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(20, 20);
+            this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSettings.TabIndex = 59;
+            this.btnSettings.TabStop = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // text2
             // 
@@ -690,270 +684,27 @@
             this.text2.TabIndex = 58;
             this.text2.Text = "The Future is here!";
             // 
-            // groupBox1
+            // text1
             // 
-            this.groupBox1.Controls.Add(this.numTimerPeriod);
-            this.groupBox1.Controls.Add(this.btnLedOffColor);
-            this.groupBox1.Controls.Add(this.btnLedOnColor);
-            this.groupBox1.Controls.Add(this.cbLedStyle);
-            this.groupBox1.Controls.Add(this.btnControl);
-            this.groupBox1.Controls.Add(this.displayLabel4);
-            this.groupBox1.Controls.Add(this.displayLabel5);
-            this.groupBox1.Controls.Add(this.displayLabel3);
-            this.groupBox1.Controls.Add(this.displayLabel2);
-            this.groupBox1.Controls.Add(this.displayLabel1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(439, 164);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Display";
+            this.text1.AutoSize = true;
+            this.text1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.text1.ForeColor = System.Drawing.Color.Tomato;
+            this.text1.Location = new System.Drawing.Point(515, 117);
+            this.text1.Name = "text1";
+            this.text1.Size = new System.Drawing.Size(286, 31);
+            this.text1.TabIndex = 57;
+            this.text1.Text = "Piri Reis Üniversitesi";
             // 
-            // groupBox2
+            // panel2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label57);
-            this.groupBox2.Controls.Add(this.btnResetT1);
-            this.groupBox2.Controls.Add(this.text1Label6);
-            this.groupBox2.Controls.Add(this.yPosT1);
-            this.groupBox2.Controls.Add(this.xPosT1);
-            this.groupBox2.Controls.Add(this.tbT1);
-            this.groupBox2.Controls.Add(this.speedT1);
-            this.groupBox2.Controls.Add(this.dirT1);
-            this.groupBox2.Controls.Add(this.text1Label5);
-            this.groupBox2.Controls.Add(this.text1Label4);
-            this.groupBox2.Controls.Add(this.text1Label3);
-            this.groupBox2.Controls.Add(this.text1Label2);
-            this.groupBox2.Controls.Add(this.text1Label1);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(460, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(391, 164);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Text #1";
-            // 
-            // displayLabel1
-            // 
-            this.displayLabel1.AutoSize = true;
-            this.displayLabel1.Location = new System.Drawing.Point(49, 29);
-            this.displayLabel1.Name = "displayLabel1";
-            this.displayLabel1.Size = new System.Drawing.Size(61, 16);
-            this.displayLabel1.TabIndex = 0;
-            this.displayLabel1.Text = "Control:";
-            // 
-            // displayLabel2
-            // 
-            this.displayLabel2.AutoSize = true;
-            this.displayLabel2.Location = new System.Drawing.Point(33, 75);
-            this.displayLabel2.Name = "displayLabel2";
-            this.displayLabel2.Size = new System.Drawing.Size(77, 16);
-            this.displayLabel2.TabIndex = 1;
-            this.displayLabel2.Text = "Led Style:";
-            // 
-            // displayLabel3
-            // 
-            this.displayLabel3.AutoSize = true;
-            this.displayLabel3.Location = new System.Drawing.Point(8, 120);
-            this.displayLabel3.Name = "displayLabel3";
-            this.displayLabel3.Size = new System.Drawing.Size(102, 16);
-            this.displayLabel3.TabIndex = 2;
-            this.displayLabel3.Text = "Led On Color:";
-            // 
-            // displayLabel5
-            // 
-            this.displayLabel5.AutoSize = true;
-            this.displayLabel5.Location = new System.Drawing.Point(224, 75);
-            this.displayLabel5.Name = "displayLabel5";
-            this.displayLabel5.Size = new System.Drawing.Size(102, 16);
-            this.displayLabel5.TabIndex = 4;
-            this.displayLabel5.Text = "Timer Period:";
-            // 
-            // displayLabel4
-            // 
-            this.displayLabel4.AutoSize = true;
-            this.displayLabel4.Location = new System.Drawing.Point(224, 120);
-            this.displayLabel4.Name = "displayLabel4";
-            this.displayLabel4.Size = new System.Drawing.Size(102, 16);
-            this.displayLabel4.TabIndex = 5;
-            this.displayLabel4.Text = "Led Off Color:";
-            // 
-            // btnControl
-            // 
-            this.btnControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btnControl.FlatAppearance.BorderSize = 0;
-            this.btnControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnControl.ForeColor = System.Drawing.Color.White;
-            this.btnControl.Location = new System.Drawing.Point(116, 26);
-            this.btnControl.Name = "btnControl";
-            this.btnControl.Size = new System.Drawing.Size(102, 23);
-            this.btnControl.TabIndex = 6;
-            this.btnControl.Text = "START";
-            this.btnControl.UseVisualStyleBackColor = false;
-            // 
-            // cbLedStyle
-            // 
-            this.cbLedStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.cbLedStyle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbLedStyle.ForeColor = System.Drawing.Color.White;
-            this.cbLedStyle.FormattingEnabled = true;
-            this.cbLedStyle.Location = new System.Drawing.Point(113, 72);
-            this.cbLedStyle.Name = "cbLedStyle";
-            this.cbLedStyle.Size = new System.Drawing.Size(105, 24);
-            this.cbLedStyle.TabIndex = 7;
-            // 
-            // btnLedOnColor
-            // 
-            this.btnLedOnColor.BackColor = System.Drawing.Color.White;
-            this.btnLedOnColor.FlatAppearance.BorderSize = 0;
-            this.btnLedOnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLedOnColor.ForeColor = System.Drawing.Color.White;
-            this.btnLedOnColor.Location = new System.Drawing.Point(113, 117);
-            this.btnLedOnColor.Name = "btnLedOnColor";
-            this.btnLedOnColor.Size = new System.Drawing.Size(102, 23);
-            this.btnLedOnColor.TabIndex = 8;
-            this.btnLedOnColor.UseVisualStyleBackColor = false;
-            // 
-            // btnLedOffColor
-            // 
-            this.btnLedOffColor.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnLedOffColor.FlatAppearance.BorderSize = 0;
-            this.btnLedOffColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLedOffColor.ForeColor = System.Drawing.Color.White;
-            this.btnLedOffColor.Location = new System.Drawing.Point(331, 117);
-            this.btnLedOffColor.Name = "btnLedOffColor";
-            this.btnLedOffColor.Size = new System.Drawing.Size(102, 23);
-            this.btnLedOffColor.TabIndex = 9;
-            this.btnLedOffColor.UseVisualStyleBackColor = false;
-            // 
-            // text1Label1
-            // 
-            this.text1Label1.AutoSize = true;
-            this.text1Label1.Location = new System.Drawing.Point(43, 29);
-            this.text1Label1.Name = "text1Label1";
-            this.text1Label1.Size = new System.Drawing.Size(42, 16);
-            this.text1Label1.TabIndex = 1;
-            this.text1Label1.Text = "Text:";
-            // 
-            // text1Label2
-            // 
-            this.text1Label2.AutoSize = true;
-            this.text1Label2.Location = new System.Drawing.Point(11, 56);
-            this.text1Label2.Name = "text1Label2";
-            this.text1Label2.Size = new System.Drawing.Size(74, 16);
-            this.text1Label2.TabIndex = 2;
-            this.text1Label2.Text = "Direction:";
-            // 
-            // text1Label3
-            // 
-            this.text1Label3.AutoSize = true;
-            this.text1Label3.Location = new System.Drawing.Point(10, 90);
-            this.text1Label3.Name = "text1Label3";
-            this.text1Label3.Size = new System.Drawing.Size(75, 16);
-            this.text1Label3.TabIndex = 3;
-            this.text1Label3.Text = "Init X pos:";
-            // 
-            // text1Label4
-            // 
-            this.text1Label4.AutoSize = true;
-            this.text1Label4.Location = new System.Drawing.Point(9, 124);
-            this.text1Label4.Name = "text1Label4";
-            this.text1Label4.Size = new System.Drawing.Size(76, 16);
-            this.text1Label4.TabIndex = 4;
-            this.text1Label4.Text = "Init Y pos:";
-            // 
-            // text1Label5
-            // 
-            this.text1Label5.AutoSize = true;
-            this.text1Label5.Location = new System.Drawing.Point(200, 56);
-            this.text1Label5.Name = "text1Label5";
-            this.text1Label5.Size = new System.Drawing.Size(58, 16);
-            this.text1Label5.TabIndex = 5;
-            this.text1Label5.Text = "Speed:";
-            // 
-            // dirT1
-            // 
-            this.dirT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.dirT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dirT1.ForeColor = System.Drawing.Color.White;
-            this.dirT1.FormattingEnabled = true;
-            this.dirT1.Location = new System.Drawing.Point(89, 53);
-            this.dirT1.Name = "dirT1";
-            this.dirT1.Size = new System.Drawing.Size(105, 24);
-            this.dirT1.TabIndex = 8;
-            // 
-            // speedT1
-            // 
-            this.speedT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.speedT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.speedT1.ForeColor = System.Drawing.Color.White;
-            this.speedT1.FormattingEnabled = true;
-            this.speedT1.Location = new System.Drawing.Point(266, 53);
-            this.speedT1.Name = "speedT1";
-            this.speedT1.Size = new System.Drawing.Size(105, 24);
-            this.speedT1.TabIndex = 9;
-            // 
-            // tbT1
-            // 
-            this.tbT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.tbT1.ForeColor = System.Drawing.Color.White;
-            this.tbT1.Location = new System.Drawing.Point(89, 24);
-            this.tbT1.Name = "tbT1";
-            this.tbT1.Size = new System.Drawing.Size(171, 22);
-            this.tbT1.TabIndex = 10;
-            // 
-            // xPosT1
-            // 
-            this.xPosT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.xPosT1.ForeColor = System.Drawing.Color.White;
-            this.xPosT1.Location = new System.Drawing.Point(89, 88);
-            this.xPosT1.Name = "xPosT1";
-            this.xPosT1.Size = new System.Drawing.Size(105, 22);
-            this.xPosT1.TabIndex = 11;
-            // 
-            // yPosT1
-            // 
-            this.yPosT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.yPosT1.ForeColor = System.Drawing.Color.White;
-            this.yPosT1.Location = new System.Drawing.Point(89, 120);
-            this.yPosT1.Name = "yPosT1";
-            this.yPosT1.Size = new System.Drawing.Size(105, 22);
-            this.yPosT1.TabIndex = 12;
-            // 
-            // text1Label6
-            // 
-            this.text1Label6.AutoSize = true;
-            this.text1Label6.Location = new System.Drawing.Point(200, 90);
-            this.text1Label6.Name = "text1Label6";
-            this.text1Label6.Size = new System.Drawing.Size(92, 16);
-            this.text1Label6.TabIndex = 13;
-            this.text1Label6.Text = "Font Family:";
-            // 
-            // btnResetT1
-            // 
-            this.btnResetT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.btnResetT1.FlatAppearance.BorderSize = 0;
-            this.btnResetT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetT1.ForeColor = System.Drawing.Color.White;
-            this.btnResetT1.Location = new System.Drawing.Point(266, 22);
-            this.btnResetT1.Name = "btnResetT1";
-            this.btnResetT1.Size = new System.Drawing.Size(105, 23);
-            this.btnResetT1.TabIndex = 15;
-            this.btnResetT1.Text = "RESET";
-            this.btnResetT1.UseVisualStyleBackColor = false;
-            // 
-            // numTimerPeriod
-            // 
-            this.numTimerPeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.numTimerPeriod.ForeColor = System.Drawing.Color.White;
-            this.numTimerPeriod.Location = new System.Drawing.Point(331, 73);
-            this.numTimerPeriod.Name = "numTimerPeriod";
-            this.numTimerPeriod.Size = new System.Drawing.Size(102, 22);
-            this.numTimerPeriod.TabIndex = 12;
+            this.panel2.Controls.Add(this.groupBox3);
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 501);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1264, 180);
+            this.panel2.TabIndex = 30;
             // 
             // groupBox3
             // 
@@ -980,6 +731,40 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Text #2";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(295, 85);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(76, 26);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Font";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(295, 117);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(76, 22);
+            this.button4.TabIndex = 19;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(200, 120);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(83, 16);
+            this.label58.TabIndex = 17;
+            this.label58.Text = "Text Color:";
             // 
             // btnResetT2
             // 
@@ -1097,23 +882,43 @@
             this.text2Label1.TabIndex = 1;
             this.text2Label1.Text = "Text:";
             // 
-            // label57
+            // groupBox2
             // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(200, 120);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(83, 16);
-            this.label57.TabIndex = 16;
-            this.label57.Text = "Text Color:";
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.label57);
+            this.groupBox2.Controls.Add(this.btnResetT1);
+            this.groupBox2.Controls.Add(this.text1Label6);
+            this.groupBox2.Controls.Add(this.yPosT1);
+            this.groupBox2.Controls.Add(this.xPosT1);
+            this.groupBox2.Controls.Add(this.tbT1);
+            this.groupBox2.Controls.Add(this.speedT1);
+            this.groupBox2.Controls.Add(this.dirT1);
+            this.groupBox2.Controls.Add(this.text1Label5);
+            this.groupBox2.Controls.Add(this.text1Label4);
+            this.groupBox2.Controls.Add(this.text1Label3);
+            this.groupBox2.Controls.Add(this.text1Label2);
+            this.groupBox2.Controls.Add(this.text1Label1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(460, 4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(391, 164);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Text #1";
             // 
-            // label58
+            // button2
             // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(200, 120);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(83, 16);
-            this.label58.TabIndex = 17;
-            this.label58.Text = "Text Color:";
+            this.button2.BackColor = System.Drawing.Color.Tomato;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(295, 117);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(76, 22);
+            this.button2.TabIndex = 18;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -1128,42 +933,253 @@
             this.button1.Text = "Font";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // label57
             // 
-            this.button2.BackColor = System.Drawing.Color.Tomato;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(295, 117);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 22);
-            this.button2.TabIndex = 18;
-            this.button2.UseVisualStyleBackColor = false;
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(200, 120);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(83, 16);
+            this.label57.TabIndex = 16;
+            this.label57.Text = "Text Color:";
             // 
-            // button4
+            // btnResetT1
             // 
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(295, 117);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(76, 22);
-            this.button4.TabIndex = 19;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnResetT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnResetT1.FlatAppearance.BorderSize = 0;
+            this.btnResetT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetT1.ForeColor = System.Drawing.Color.White;
+            this.btnResetT1.Location = new System.Drawing.Point(266, 22);
+            this.btnResetT1.Name = "btnResetT1";
+            this.btnResetT1.Size = new System.Drawing.Size(105, 23);
+            this.btnResetT1.TabIndex = 15;
+            this.btnResetT1.Text = "RESET";
+            this.btnResetT1.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // text1Label6
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(295, 85);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 26);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Font";
-            this.button3.UseVisualStyleBackColor = false;
+            this.text1Label6.AutoSize = true;
+            this.text1Label6.Location = new System.Drawing.Point(200, 90);
+            this.text1Label6.Name = "text1Label6";
+            this.text1Label6.Size = new System.Drawing.Size(92, 16);
+            this.text1Label6.TabIndex = 13;
+            this.text1Label6.Text = "Font Family:";
+            // 
+            // yPosT1
+            // 
+            this.yPosT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.yPosT1.ForeColor = System.Drawing.Color.White;
+            this.yPosT1.Location = new System.Drawing.Point(89, 120);
+            this.yPosT1.Name = "yPosT1";
+            this.yPosT1.Size = new System.Drawing.Size(105, 22);
+            this.yPosT1.TabIndex = 12;
+            // 
+            // xPosT1
+            // 
+            this.xPosT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.xPosT1.ForeColor = System.Drawing.Color.White;
+            this.xPosT1.Location = new System.Drawing.Point(89, 88);
+            this.xPosT1.Name = "xPosT1";
+            this.xPosT1.Size = new System.Drawing.Size(105, 22);
+            this.xPosT1.TabIndex = 11;
+            // 
+            // tbT1
+            // 
+            this.tbT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.tbT1.ForeColor = System.Drawing.Color.White;
+            this.tbT1.Location = new System.Drawing.Point(89, 24);
+            this.tbT1.Name = "tbT1";
+            this.tbT1.Size = new System.Drawing.Size(171, 22);
+            this.tbT1.TabIndex = 10;
+            // 
+            // speedT1
+            // 
+            this.speedT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.speedT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.speedT1.ForeColor = System.Drawing.Color.White;
+            this.speedT1.FormattingEnabled = true;
+            this.speedT1.Location = new System.Drawing.Point(266, 53);
+            this.speedT1.Name = "speedT1";
+            this.speedT1.Size = new System.Drawing.Size(105, 24);
+            this.speedT1.TabIndex = 9;
+            // 
+            // dirT1
+            // 
+            this.dirT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.dirT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dirT1.ForeColor = System.Drawing.Color.White;
+            this.dirT1.FormattingEnabled = true;
+            this.dirT1.Location = new System.Drawing.Point(89, 53);
+            this.dirT1.Name = "dirT1";
+            this.dirT1.Size = new System.Drawing.Size(105, 24);
+            this.dirT1.TabIndex = 8;
+            // 
+            // text1Label5
+            // 
+            this.text1Label5.AutoSize = true;
+            this.text1Label5.Location = new System.Drawing.Point(200, 56);
+            this.text1Label5.Name = "text1Label5";
+            this.text1Label5.Size = new System.Drawing.Size(58, 16);
+            this.text1Label5.TabIndex = 5;
+            this.text1Label5.Text = "Speed:";
+            // 
+            // text1Label4
+            // 
+            this.text1Label4.AutoSize = true;
+            this.text1Label4.Location = new System.Drawing.Point(9, 124);
+            this.text1Label4.Name = "text1Label4";
+            this.text1Label4.Size = new System.Drawing.Size(76, 16);
+            this.text1Label4.TabIndex = 4;
+            this.text1Label4.Text = "Init Y pos:";
+            // 
+            // text1Label3
+            // 
+            this.text1Label3.AutoSize = true;
+            this.text1Label3.Location = new System.Drawing.Point(10, 90);
+            this.text1Label3.Name = "text1Label3";
+            this.text1Label3.Size = new System.Drawing.Size(75, 16);
+            this.text1Label3.TabIndex = 3;
+            this.text1Label3.Text = "Init X pos:";
+            // 
+            // text1Label2
+            // 
+            this.text1Label2.AutoSize = true;
+            this.text1Label2.Location = new System.Drawing.Point(11, 56);
+            this.text1Label2.Name = "text1Label2";
+            this.text1Label2.Size = new System.Drawing.Size(74, 16);
+            this.text1Label2.TabIndex = 2;
+            this.text1Label2.Text = "Direction:";
+            // 
+            // text1Label1
+            // 
+            this.text1Label1.AutoSize = true;
+            this.text1Label1.Location = new System.Drawing.Point(43, 29);
+            this.text1Label1.Name = "text1Label1";
+            this.text1Label1.Size = new System.Drawing.Size(42, 16);
+            this.text1Label1.TabIndex = 1;
+            this.text1Label1.Text = "Text:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.numTimerPeriod);
+            this.groupBox1.Controls.Add(this.btnLedOffColor);
+            this.groupBox1.Controls.Add(this.btnLedOnColor);
+            this.groupBox1.Controls.Add(this.cbLedStyle);
+            this.groupBox1.Controls.Add(this.btnControl);
+            this.groupBox1.Controls.Add(this.displayLabel4);
+            this.groupBox1.Controls.Add(this.displayLabel5);
+            this.groupBox1.Controls.Add(this.displayLabel3);
+            this.groupBox1.Controls.Add(this.displayLabel2);
+            this.groupBox1.Controls.Add(this.displayLabel1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(439, 164);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Display";
+            // 
+            // numTimerPeriod
+            // 
+            this.numTimerPeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.numTimerPeriod.ForeColor = System.Drawing.Color.White;
+            this.numTimerPeriod.Location = new System.Drawing.Point(331, 73);
+            this.numTimerPeriod.Name = "numTimerPeriod";
+            this.numTimerPeriod.Size = new System.Drawing.Size(102, 22);
+            this.numTimerPeriod.TabIndex = 12;
+            // 
+            // btnLedOffColor
+            // 
+            this.btnLedOffColor.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLedOffColor.FlatAppearance.BorderSize = 0;
+            this.btnLedOffColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLedOffColor.ForeColor = System.Drawing.Color.White;
+            this.btnLedOffColor.Location = new System.Drawing.Point(331, 117);
+            this.btnLedOffColor.Name = "btnLedOffColor";
+            this.btnLedOffColor.Size = new System.Drawing.Size(102, 23);
+            this.btnLedOffColor.TabIndex = 9;
+            this.btnLedOffColor.UseVisualStyleBackColor = false;
+            // 
+            // btnLedOnColor
+            // 
+            this.btnLedOnColor.BackColor = System.Drawing.Color.White;
+            this.btnLedOnColor.FlatAppearance.BorderSize = 0;
+            this.btnLedOnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLedOnColor.ForeColor = System.Drawing.Color.White;
+            this.btnLedOnColor.Location = new System.Drawing.Point(113, 117);
+            this.btnLedOnColor.Name = "btnLedOnColor";
+            this.btnLedOnColor.Size = new System.Drawing.Size(102, 23);
+            this.btnLedOnColor.TabIndex = 8;
+            this.btnLedOnColor.UseVisualStyleBackColor = false;
+            // 
+            // cbLedStyle
+            // 
+            this.cbLedStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.cbLedStyle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbLedStyle.ForeColor = System.Drawing.Color.White;
+            this.cbLedStyle.FormattingEnabled = true;
+            this.cbLedStyle.Location = new System.Drawing.Point(113, 72);
+            this.cbLedStyle.Name = "cbLedStyle";
+            this.cbLedStyle.Size = new System.Drawing.Size(105, 24);
+            this.cbLedStyle.TabIndex = 7;
+            // 
+            // btnControl
+            // 
+            this.btnControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.btnControl.FlatAppearance.BorderSize = 0;
+            this.btnControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnControl.ForeColor = System.Drawing.Color.White;
+            this.btnControl.Location = new System.Drawing.Point(116, 26);
+            this.btnControl.Name = "btnControl";
+            this.btnControl.Size = new System.Drawing.Size(102, 23);
+            this.btnControl.TabIndex = 6;
+            this.btnControl.Text = "START";
+            this.btnControl.UseVisualStyleBackColor = false;
+            // 
+            // displayLabel4
+            // 
+            this.displayLabel4.AutoSize = true;
+            this.displayLabel4.Location = new System.Drawing.Point(224, 120);
+            this.displayLabel4.Name = "displayLabel4";
+            this.displayLabel4.Size = new System.Drawing.Size(102, 16);
+            this.displayLabel4.TabIndex = 5;
+            this.displayLabel4.Text = "Led Off Color:";
+            // 
+            // displayLabel5
+            // 
+            this.displayLabel5.AutoSize = true;
+            this.displayLabel5.Location = new System.Drawing.Point(224, 75);
+            this.displayLabel5.Name = "displayLabel5";
+            this.displayLabel5.Size = new System.Drawing.Size(102, 16);
+            this.displayLabel5.TabIndex = 4;
+            this.displayLabel5.Text = "Timer Period:";
+            // 
+            // displayLabel3
+            // 
+            this.displayLabel3.AutoSize = true;
+            this.displayLabel3.Location = new System.Drawing.Point(8, 120);
+            this.displayLabel3.Name = "displayLabel3";
+            this.displayLabel3.Size = new System.Drawing.Size(102, 16);
+            this.displayLabel3.TabIndex = 2;
+            this.displayLabel3.Text = "Led On Color:";
+            // 
+            // displayLabel2
+            // 
+            this.displayLabel2.AutoSize = true;
+            this.displayLabel2.Location = new System.Drawing.Point(33, 75);
+            this.displayLabel2.Name = "displayLabel2";
+            this.displayLabel2.Size = new System.Drawing.Size(77, 16);
+            this.displayLabel2.TabIndex = 1;
+            this.displayLabel2.Text = "Led Style:";
+            // 
+            // displayLabel1
+            // 
+            this.displayLabel1.AutoSize = true;
+            this.displayLabel1.Location = new System.Drawing.Point(49, 29);
+            this.displayLabel1.Name = "displayLabel1";
+            this.displayLabel1.Size = new System.Drawing.Size(61, 16);
+            this.displayLabel1.TabIndex = 0;
+            this.displayLabel1.Text = "Control:";
             // 
             // Form1
             // 
@@ -1174,25 +1190,28 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Text = "Form1";
+            this.Text = "Message Board - Mert KARACA";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xPosT1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yPosT1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTimerPeriod)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yPosT2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xPosT2)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yPosT1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xPosT1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTimerPeriod)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1302,6 +1321,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox btnSettings;
     }
 }
 
