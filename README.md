@@ -14,4 +14,6 @@ Added settings button to show / hide the settings menu.
 
 Changed the app icon.
 
+More than half of all items were provided with functionality.
+
 -------------------------------
