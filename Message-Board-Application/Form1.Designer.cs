@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label28 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -86,13 +87,15 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.text2Temp = new System.Windows.Forms.Label();
+            this.text1Temp = new System.Windows.Forms.Label();
             this.btnSettings = new System.Windows.Forms.PictureBox();
             this.text2 = new System.Windows.Forms.Label();
             this.text1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnFontT2 = new System.Windows.Forms.Button();
+            this.btnColorT2 = new System.Windows.Forms.Button();
             this.label58 = new System.Windows.Forms.Label();
             this.btnResetT2 = new System.Windows.Forms.Button();
             this.text2Label6 = new System.Windows.Forms.Label();
@@ -107,8 +110,8 @@
             this.text2Label2 = new System.Windows.Forms.Label();
             this.text2Label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnColorT1 = new System.Windows.Forms.Button();
+            this.btnFontT1 = new System.Windows.Forms.Button();
             this.label57 = new System.Windows.Forms.Label();
             this.btnResetT1 = new System.Windows.Forms.Button();
             this.text1Label6 = new System.Windows.Forms.Label();
@@ -123,6 +126,7 @@
             this.text1Label2 = new System.Windows.Forms.Label();
             this.text1Label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnResetAll = new System.Windows.Forms.Button();
             this.numTimerPeriod = new System.Windows.Forms.NumericUpDown();
             this.btnLedOffColor = new System.Windows.Forms.Button();
             this.btnLedOnColor = new System.Windows.Forms.Button();
@@ -133,6 +137,18 @@
             this.displayLabel3 = new System.Windows.Forms.Label();
             this.displayLabel2 = new System.Windows.Forms.Label();
             this.displayLabel1 = new System.Windows.Forms.Label();
+            this.ledTimer = new System.Windows.Forms.Timer(this.components);
+            this.ledOnColorDialog = new System.Windows.Forms.ColorDialog();
+            this.ledOffColorDialog = new System.Windows.Forms.ColorDialog();
+            this.t1ColorDialog = new System.Windows.Forms.ColorDialog();
+            this.t2ColorDialog = new System.Windows.Forms.ColorDialog();
+            this.t1fontDialog = new System.Windows.Forms.FontDialog();
+            this.t2fontDialog = new System.Windows.Forms.FontDialog();
+            this.t1SpeedTimer = new System.Windows.Forms.Timer(this.components);
+            this.t2SpeedTimer = new System.Windows.Forms.Timer(this.components);
+            this.label59 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             this.panel2.SuspendLayout();
@@ -596,9 +612,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.text2Temp);
+            this.panel1.Controls.Add(this.text1Temp);
             this.panel1.Controls.Add(this.btnSettings);
-            this.panel1.Controls.Add(this.text2);
-            this.panel1.Controls.Add(this.text1);
             this.panel1.Controls.Add(this.label29);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.label31);
@@ -655,11 +671,35 @@
             this.panel1.Controls.Add(this.label27);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.text1);
+            this.panel1.Controls.Add(this.text2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 495);
             this.panel1.TabIndex = 29;
+            // 
+            // text2Temp
+            // 
+            this.text2Temp.AutoSize = true;
+            this.text2Temp.Location = new System.Drawing.Point(1170, 162);
+            this.text2Temp.Name = "text2Temp";
+            this.text2Temp.Size = new System.Drawing.Size(71, 16);
+            this.text2Temp.TabIndex = 61;
+            this.text2Temp.Text = "text2Temp";
+            this.text2Temp.Visible = false;
+            // 
+            // text1Temp
+            // 
+            this.text1Temp.AutoSize = true;
+            this.text1Temp.Location = new System.Drawing.Point(1170, 136);
+            this.text1Temp.Name = "text1Temp";
+            this.text1Temp.Size = new System.Drawing.Size(71, 16);
+            this.text1Temp.TabIndex = 60;
+            this.text1Temp.Text = "text1Temp";
+            this.text1Temp.Visible = false;
             // 
             // btnSettings
             // 
@@ -678,22 +718,22 @@
             this.text2.AutoSize = true;
             this.text2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.text2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.text2.Location = new System.Drawing.Point(529, 180);
+            this.text2.Location = new System.Drawing.Point(506, 225);
             this.text2.Name = "text2";
-            this.text2.Size = new System.Drawing.Size(262, 31);
+            this.text2.Size = new System.Drawing.Size(321, 31);
             this.text2.TabIndex = 58;
-            this.text2.Text = "The Future is here!";
+            this.text2.Text = "Work hard, stay humble";
             // 
             // text1
             // 
             this.text1.AutoSize = true;
             this.text1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.text1.ForeColor = System.Drawing.Color.Tomato;
-            this.text1.Location = new System.Drawing.Point(515, 117);
+            this.text1.Location = new System.Drawing.Point(567, 162);
             this.text1.Name = "text1";
-            this.text1.Size = new System.Drawing.Size(286, 31);
+            this.text1.Size = new System.Drawing.Size(198, 31);
             this.text1.TabIndex = 57;
-            this.text1.Text = "Piri Reis Üniversitesi";
+            this.text1.Text = "Mert KARACA";
             // 
             // panel2
             // 
@@ -708,8 +748,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.btnFontT2);
+            this.groupBox3.Controls.Add(this.btnColorT2);
             this.groupBox3.Controls.Add(this.label58);
             this.groupBox3.Controls.Add(this.btnResetT2);
             this.groupBox3.Controls.Add(this.text2Label6);
@@ -732,30 +772,32 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Text #2";
             // 
-            // button3
+            // btnFontT2
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(295, 85);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 26);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Font";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnFontT2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnFontT2.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btnFontT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFontT2.ForeColor = System.Drawing.Color.White;
+            this.btnFontT2.Location = new System.Drawing.Point(295, 85);
+            this.btnFontT2.Name = "btnFontT2";
+            this.btnFontT2.Size = new System.Drawing.Size(76, 26);
+            this.btnFontT2.TabIndex = 20;
+            this.btnFontT2.Text = "Font";
+            this.btnFontT2.UseVisualStyleBackColor = false;
+            this.btnFontT2.Click += new System.EventHandler(this.btnFontT2_Click);
             // 
-            // button4
+            // btnColorT2
             // 
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(295, 117);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(76, 22);
-            this.button4.TabIndex = 19;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnColorT2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnColorT2.FlatAppearance.BorderSize = 0;
+            this.btnColorT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColorT2.ForeColor = System.Drawing.Color.White;
+            this.btnColorT2.Location = new System.Drawing.Point(295, 117);
+            this.btnColorT2.Name = "btnColorT2";
+            this.btnColorT2.Size = new System.Drawing.Size(76, 22);
+            this.btnColorT2.TabIndex = 19;
+            this.btnColorT2.UseVisualStyleBackColor = false;
+            this.btnColorT2.Click += new System.EventHandler(this.btnColorT2_Click);
             // 
             // label58
             // 
@@ -778,6 +820,7 @@
             this.btnResetT2.TabIndex = 15;
             this.btnResetT2.Text = "RESET";
             this.btnResetT2.UseVisualStyleBackColor = false;
+            this.btnResetT2.Click += new System.EventHandler(this.btnResetT2_Click);
             // 
             // text2Label6
             // 
@@ -814,6 +857,7 @@
             this.tbT2.Name = "tbT2";
             this.tbT2.Size = new System.Drawing.Size(169, 22);
             this.tbT2.TabIndex = 10;
+            this.tbT2.TextChanged += new System.EventHandler(this.tbT2_TextChanged);
             // 
             // speedT2
             // 
@@ -821,10 +865,16 @@
             this.speedT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.speedT2.ForeColor = System.Drawing.Color.White;
             this.speedT2.FormattingEnabled = true;
+            this.speedT2.Items.AddRange(new object[] {
+            "Stop",
+            "Slow",
+            "Medium",
+            "Fast"});
             this.speedT2.Location = new System.Drawing.Point(266, 53);
             this.speedT2.Name = "speedT2";
             this.speedT2.Size = new System.Drawing.Size(105, 24);
             this.speedT2.TabIndex = 9;
+            this.speedT2.SelectedIndexChanged += new System.EventHandler(this.speedT2_SelectedIndexChanged);
             // 
             // dirT2
             // 
@@ -832,10 +882,16 @@
             this.dirT2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dirT2.ForeColor = System.Drawing.Color.White;
             this.dirT2.FormattingEnabled = true;
+            this.dirT2.Items.AddRange(new object[] {
+            "Left To Right",
+            "Right to Left",
+            "Up to Down",
+            "Down to Up"});
             this.dirT2.Location = new System.Drawing.Point(89, 53);
             this.dirT2.Name = "dirT2";
             this.dirT2.Size = new System.Drawing.Size(105, 24);
             this.dirT2.TabIndex = 8;
+            this.dirT2.SelectedIndexChanged += new System.EventHandler(this.dirT2_SelectedIndexChanged);
             // 
             // text2Label5
             // 
@@ -884,8 +940,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnColorT1);
+            this.groupBox2.Controls.Add(this.btnFontT1);
             this.groupBox2.Controls.Add(this.label57);
             this.groupBox2.Controls.Add(this.btnResetT1);
             this.groupBox2.Controls.Add(this.text1Label6);
@@ -908,30 +964,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Text #1";
             // 
-            // button2
+            // btnColorT1
             // 
-            this.button2.BackColor = System.Drawing.Color.Tomato;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(295, 117);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 22);
-            this.button2.TabIndex = 18;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnColorT1.BackColor = System.Drawing.Color.Tomato;
+            this.btnColorT1.FlatAppearance.BorderSize = 0;
+            this.btnColorT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColorT1.ForeColor = System.Drawing.Color.White;
+            this.btnColorT1.Location = new System.Drawing.Point(295, 117);
+            this.btnColorT1.Name = "btnColorT1";
+            this.btnColorT1.Size = new System.Drawing.Size(76, 22);
+            this.btnColorT1.TabIndex = 18;
+            this.btnColorT1.UseVisualStyleBackColor = false;
+            this.btnColorT1.Click += new System.EventHandler(this.btnColorT1_Click);
             // 
-            // button1
+            // btnFontT1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(295, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 26);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Font";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFontT1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.btnFontT1.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.btnFontT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFontT1.ForeColor = System.Drawing.Color.White;
+            this.btnFontT1.Location = new System.Drawing.Point(295, 85);
+            this.btnFontT1.Name = "btnFontT1";
+            this.btnFontT1.Size = new System.Drawing.Size(76, 26);
+            this.btnFontT1.TabIndex = 17;
+            this.btnFontT1.Text = "Font";
+            this.btnFontT1.UseVisualStyleBackColor = false;
+            this.btnFontT1.Click += new System.EventHandler(this.btnFontT1_Click);
             // 
             // label57
             // 
@@ -954,6 +1012,7 @@
             this.btnResetT1.TabIndex = 15;
             this.btnResetT1.Text = "RESET";
             this.btnResetT1.UseVisualStyleBackColor = false;
+            this.btnResetT1.Click += new System.EventHandler(this.btnResetT1_Click);
             // 
             // text1Label6
             // 
@@ -990,6 +1049,7 @@
             this.tbT1.Name = "tbT1";
             this.tbT1.Size = new System.Drawing.Size(171, 22);
             this.tbT1.TabIndex = 10;
+            this.tbT1.TextChanged += new System.EventHandler(this.tbT1_TextChanged);
             // 
             // speedT1
             // 
@@ -997,10 +1057,16 @@
             this.speedT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.speedT1.ForeColor = System.Drawing.Color.White;
             this.speedT1.FormattingEnabled = true;
+            this.speedT1.Items.AddRange(new object[] {
+            "Stop",
+            "Slow",
+            "Medium",
+            "Fast"});
             this.speedT1.Location = new System.Drawing.Point(266, 53);
             this.speedT1.Name = "speedT1";
             this.speedT1.Size = new System.Drawing.Size(105, 24);
             this.speedT1.TabIndex = 9;
+            this.speedT1.SelectedIndexChanged += new System.EventHandler(this.speedT1_SelectedIndexChanged);
             // 
             // dirT1
             // 
@@ -1008,10 +1074,16 @@
             this.dirT1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dirT1.ForeColor = System.Drawing.Color.White;
             this.dirT1.FormattingEnabled = true;
+            this.dirT1.Items.AddRange(new object[] {
+            "Left To Right",
+            "Right to Left",
+            "Up to Down",
+            "Down to Up"});
             this.dirT1.Location = new System.Drawing.Point(89, 53);
             this.dirT1.Name = "dirT1";
             this.dirT1.Size = new System.Drawing.Size(105, 24);
             this.dirT1.TabIndex = 8;
+            this.dirT1.SelectedIndexChanged += new System.EventHandler(this.dirT1_SelectedIndexChanged);
             // 
             // text1Label5
             // 
@@ -1060,6 +1132,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label59);
+            this.groupBox1.Controls.Add(this.btnResetAll);
             this.groupBox1.Controls.Add(this.numTimerPeriod);
             this.groupBox1.Controls.Add(this.btnLedOffColor);
             this.groupBox1.Controls.Add(this.btnLedOnColor);
@@ -1078,6 +1152,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Display";
+            // 
+            // btnResetAll
+            // 
+            this.btnResetAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnResetAll.FlatAppearance.BorderSize = 0;
+            this.btnResetAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetAll.ForeColor = System.Drawing.Color.White;
+            this.btnResetAll.Location = new System.Drawing.Point(331, 24);
+            this.btnResetAll.Name = "btnResetAll";
+            this.btnResetAll.Size = new System.Drawing.Size(102, 23);
+            this.btnResetAll.TabIndex = 16;
+            this.btnResetAll.Text = "RESET ALL";
+            this.btnResetAll.UseVisualStyleBackColor = false;
+            this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
             // 
             // numTimerPeriod
             // 
@@ -1099,6 +1187,7 @@
             this.btnLedOffColor.Size = new System.Drawing.Size(102, 23);
             this.btnLedOffColor.TabIndex = 9;
             this.btnLedOffColor.UseVisualStyleBackColor = false;
+            this.btnLedOffColor.Click += new System.EventHandler(this.btnLedOffColor_Click);
             // 
             // btnLedOnColor
             // 
@@ -1111,6 +1200,7 @@
             this.btnLedOnColor.Size = new System.Drawing.Size(102, 23);
             this.btnLedOnColor.TabIndex = 8;
             this.btnLedOnColor.UseVisualStyleBackColor = false;
+            this.btnLedOnColor.Click += new System.EventHandler(this.btnLedOnColor_Click);
             // 
             // cbLedStyle
             // 
@@ -1139,7 +1229,7 @@
             // displayLabel4
             // 
             this.displayLabel4.AutoSize = true;
-            this.displayLabel4.Location = new System.Drawing.Point(224, 120);
+            this.displayLabel4.Location = new System.Drawing.Point(223, 120);
             this.displayLabel4.Name = "displayLabel4";
             this.displayLabel4.Size = new System.Drawing.Size(102, 16);
             this.displayLabel4.TabIndex = 5;
@@ -1148,7 +1238,7 @@
             // displayLabel5
             // 
             this.displayLabel5.AutoSize = true;
-            this.displayLabel5.Location = new System.Drawing.Point(224, 75);
+            this.displayLabel5.Location = new System.Drawing.Point(223, 75);
             this.displayLabel5.Name = "displayLabel5";
             this.displayLabel5.Size = new System.Drawing.Size(102, 16);
             this.displayLabel5.TabIndex = 4;
@@ -1180,6 +1270,59 @@
             this.displayLabel1.Size = new System.Drawing.Size(61, 16);
             this.displayLabel1.TabIndex = 0;
             this.displayLabel1.Text = "Control:";
+            // 
+            // ledTimer
+            // 
+            this.ledTimer.Enabled = true;
+            this.ledTimer.Interval = 500;
+            this.ledTimer.Tick += new System.EventHandler(this.ledTimer_Tick);
+            // 
+            // ledOnColorDialog
+            // 
+            this.ledOnColorDialog.Color = System.Drawing.Color.White;
+            // 
+            // ledOffColorDialog
+            // 
+            this.ledOffColorDialog.Color = System.Drawing.Color.RoyalBlue;
+            // 
+            // t1ColorDialog
+            // 
+            this.t1ColorDialog.Color = System.Drawing.Color.Tomato;
+            // 
+            // t2ColorDialog
+            // 
+            this.t2ColorDialog.Color = System.Drawing.Color.DodgerBlue;
+            // 
+            // t1SpeedTimer
+            // 
+            this.t1SpeedTimer.Tick += new System.EventHandler(this.t1SpeedTimer_Tick);
+            // 
+            // t2SpeedTimer
+            // 
+            this.t2SpeedTimer.Tick += new System.EventHandler(this.t2SpeedTimer_Tick);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(250, 27);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(75, 16);
+            this.label59.TabIndex = 17;
+            this.label59.Text = "Reset All:";
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1261, 45);
+            this.panel3.TabIndex = 62;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(4, 447);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1260, 234);
+            this.panel4.TabIndex = 63;
             // 
             // Form1
             // 
@@ -1317,11 +1460,26 @@
         private System.Windows.Forms.Label text2Label1;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFontT2;
+        private System.Windows.Forms.Button btnColorT2;
+        private System.Windows.Forms.Button btnColorT1;
+        private System.Windows.Forms.Button btnFontT1;
         private System.Windows.Forms.PictureBox btnSettings;
+        private System.Windows.Forms.Timer ledTimer;
+        private System.Windows.Forms.ColorDialog ledOnColorDialog;
+        private System.Windows.Forms.ColorDialog ledOffColorDialog;
+        private System.Windows.Forms.Button btnResetAll;
+        private System.Windows.Forms.ColorDialog t1ColorDialog;
+        private System.Windows.Forms.ColorDialog t2ColorDialog;
+        private System.Windows.Forms.FontDialog t1fontDialog;
+        private System.Windows.Forms.FontDialog t2fontDialog;
+        private System.Windows.Forms.Label text2Temp;
+        private System.Windows.Forms.Label text1Temp;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Timer t1SpeedTimer;
+        private System.Windows.Forms.Timer t2SpeedTimer;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 
