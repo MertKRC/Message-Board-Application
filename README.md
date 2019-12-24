@@ -20,4 +20,10 @@ Added functionality to reset button and default values.
 
 Added functionality to x-y numeric up down items.
 
+Added functionality to timer period. Changed reset buttons functionality.
+
+The features of all items have been activated. Form 1 compleated. Login form will come soon.
+
+Created new form for login. Added Github GIF to visualize it. Project's Beta 1.0 has been published.
+
 -------------------------------
