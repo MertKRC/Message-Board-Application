@@ -13,16 +13,15 @@ namespace Message_Board_Application
     public partial class Form1 : Form
     {
         String appPath;
+        //Color Map
+        //Bootstrap Danger = 219, 53, 69
+        //Bootstrap Success = 40, 167, 69
+        //Bootstrap Warning
+        //Bootstrap Dark
 
         public Form1()
         {
             InitializeComponent();     
-        }
-
-        public void getTempTexts()
-        {
-            text1Temp.Font = text1.Font;
-            text2Temp.Font = text2.Font;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,9 +30,34 @@ namespace Message_Board_Application
             getTempTexts();
             ledLabelsSelect();
             resetAll();
+            timerStartStop(false);
+            resetComboBoxes();
             this.MaximizeBox = false;
         }
+        private void t1ComboBoxes()
+        {
+            dirT1.SelectedIndex = 0;
+            speedT1.SelectedIndex = 3;
+        }
 
+        private void t2ComboBoxes()
+        {
+            dirT2.SelectedIndex = 2;
+            speedT2.SelectedIndex = 3;
+        }
+        //Default comboBox values
+        private void resetComboBoxes()
+        {
+            t1ComboBoxes();
+            t2ComboBoxes();
+        }
+
+        //Temporary texts to reset main text to default value
+        public void getTempTexts()
+        {
+            text1Temp.Font = text1.Font;
+            text2Temp.Font = text2.Font;
+        }
         //Reset Methods
 
         public void t1Reset()
@@ -43,15 +67,19 @@ namespace Message_Board_Application
             text1.ForeColor = Color.Tomato;
             text1.Font = text1Temp.Font;
             btnColorT1.BackColor = Color.Tomato;
+            text1.Location = new Point(567, 162);
+            t1ComboBoxes();
         }
 
         public void t2Reset()
         {
             tbT2.Text = "";
-            text2.Text = "Work hard, stay humble";
+            text2.Text = "Work hard, stay humble.";
             text2.ForeColor = Color.DodgerBlue;
             text2.Font = text2Temp.Font;
             btnColorT2.BackColor = Color.DodgerBlue;
+            text2.Location = new Point(506, 225);
+            t2ComboBoxes();
         }
 
         public void resetAll()
@@ -261,12 +289,18 @@ namespace Message_Board_Application
 
         private void t1SpeedTimer_Tick(object sender, EventArgs e)
         {
-            text1Move();
+            if(btnControl.Text != "START")
+            {
+                text1Move();
+            }
         }
 
         private void t2SpeedTimer_Tick(object sender, EventArgs e)
         {
-            text2Move();
+            if(btnControl.Text != "START")
+            {
+                text2Move();
+            }
         }
         //Text Animation END
 
@@ -304,13 +338,52 @@ namespace Message_Board_Application
             text2.Text = tbT2.Text;
         }
 
-
+        
         // *** BUTTONS START ***
+        public void timerStartStop(bool startAll)
+        {
+            if(startAll == true)
+            {
+                ledTimer.Enabled = true;
+                t1SpeedTimer.Enabled = true;
+                t2SpeedTimer.Enabled = true;
+            }
+            else if(startAll == false)
+            {
+                ledTimer.Enabled = false;
+                t1SpeedTimer.Enabled = false;
+                t2SpeedTimer.Enabled = false;
+            }
+        }
+
+        public void btnControlMethod()
+        {
+            if (btnControl.Text == "START")
+            {
+                btnControl.Text = "STOP";
+                btnControl.BackColor = Color.FromArgb(219, 53, 69);
+                timerStartStop(true);
+            }
+            else
+            {
+                btnControl.Text = "START";
+                btnControl.BackColor = Color.FromArgb(40, 167, 69);
+                timerStartStop(false);
+            }
+        }
+
+
+        //Start Button
+        private void btnControl_Click(object sender, EventArgs e)
+        {
+            btnControlMethod();
+        }
 
         //RESET START
         //Reset All
         private void btnResetAll_Click(object sender, EventArgs e)
         {
+            btnControlMethod();
             resetAll();
         }
 

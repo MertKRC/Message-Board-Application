@@ -1146,7 +1146,7 @@
             this.groupBox1.Controls.Add(this.displayLabel1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(439, 164);
             this.groupBox1.TabIndex = 0;
@@ -1225,6 +1225,7 @@
             this.btnControl.TabIndex = 6;
             this.btnControl.Text = "START";
             this.btnControl.UseVisualStyleBackColor = false;
+            this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
             // 
             // displayLabel4
             // 
@@ -1273,7 +1274,6 @@
             // 
             // ledTimer
             // 
-            this.ledTimer.Enabled = true;
             this.ledTimer.Interval = 500;
             this.ledTimer.Tick += new System.EventHandler(this.ledTimer_Tick);
             // 
