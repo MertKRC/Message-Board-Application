@@ -4,7 +4,7 @@ Message board application for Piri Reis University.
 The program basically simulates the control panel of an airport's message boards.
 
 ### Quick Preview
-![Message-Board-Application](gif link will come after beta)
+![Message-Board-Application](https://raw.githubusercontent.com/MertKRC/Message-Board-Application/master/Github/message-board-application.gif?token=ALMLKIFWAOBC2UWCY3KDOD26AJ2ZA)
 
 Change Log:
 -------------------------------
