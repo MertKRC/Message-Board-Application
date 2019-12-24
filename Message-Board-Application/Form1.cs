@@ -13,6 +13,8 @@ namespace Message_Board_Application
     public partial class Form1 : Form
     {
         String appPath;
+        //Create ledLabels list from empty labels
+        List<Label> ledLabels = new List<Label>();
         int t1Direction, t2Direction;
         //Color Map
         //Bootstrap Danger = 219, 53, 69
@@ -62,7 +64,7 @@ namespace Message_Board_Application
             yPosT2.Value = text2.Left;
         }
         
-
+        // X - Y Positions
         private void xPosT1_ValueChanged(object sender, EventArgs e)
         {
             text1.Top = Convert.ToInt32(xPosT1.Value);
@@ -73,6 +75,26 @@ namespace Message_Board_Application
             text1.Left = Convert.ToInt32(yPosT1.Value);
         }
 
+        private void xPosT2_ValueChanged(object sender, EventArgs e)
+        {
+            text2.Top = Convert.ToInt32(xPosT2.Value);
+        }
+
+        private void yPosT2_ValueChanged(object sender, EventArgs e)
+        {
+            text2.Left = Convert.ToInt32(yPosT2.Value);
+        }
+
+        //Temporary texts to reset main text to default value
+        public void getTempTexts()
+        {
+            text1Temp.Font = text1.Font;
+            text2Temp.Font = text2.Font;
+        }
+
+        //Reset Methods
+
+        //Reset ComboBox
         private void t1ComboBoxes()
         {
             dirT1.SelectedIndex = 0;
@@ -84,20 +106,11 @@ namespace Message_Board_Application
             dirT2.SelectedIndex = 2;
             speedT2.SelectedIndex = 3;
         }
-        //Default comboBox values
         private void resetComboBoxes()
         {
             t1ComboBoxes();
             t2ComboBoxes();
         }
-
-        //Temporary texts to reset main text to default value
-        public void getTempTexts()
-        {
-            text1Temp.Font = text1.Font;
-            text2Temp.Font = text2.Font;
-        }
-        //Reset Methods
 
         public void t1Reset()
         {
@@ -107,6 +120,8 @@ namespace Message_Board_Application
             text1.Font = text1Temp.Font;
             btnColorT1.BackColor = Color.Tomato;
             text1.Location = new Point(567, 162);
+            xPosT1.Value = 162;
+            yPosT1.Value = 567;
             t1ComboBoxes();
         }
 
@@ -118,6 +133,8 @@ namespace Message_Board_Application
             text2.Font = text2Temp.Font;
             btnColorT2.BackColor = Color.DodgerBlue;
             text2.Location = new Point(506, 225);
+            xPosT2.Value = 225;
+            yPosT2.Value = 506;
             t2ComboBoxes();
         }
 
@@ -127,18 +144,20 @@ namespace Message_Board_Application
             t2Reset();
             ledColorReset();
             numTimerPeriod.Value = 0;
+            cbLedStyle.SelectedIndex = 2;
         }
 
-        //Create ledLabels list from empty labels
-        List<Label> ledLabels = new List<Label>();
+        //Select empty lables to make them LED
         public void ledLabelsSelect()
         {
-            foreach (Label lbl in this.panel1.Controls.OfType<Label>().Where(x => x.Text == ""))
+            foreach (Label lbl in this.panel1.Controls.OfType<Label>()
+                .Where(x => x.Text == ""))
             {
                 ledLabels.Add(lbl);
             }
         }
 
+        //Reset all LED colors to default value
         private void ledColorReset()
         {
             ledOnColorDialog.Color = Color.White;
@@ -357,7 +376,7 @@ namespace Message_Board_Application
         private void ledTimer_Tick(object sender, EventArgs e)
         {
             //Led color changes
-            if(i != 0)
+            if (i != 0)
             {
                 foreach (Label lbl in ledLabels)
                 {
@@ -384,6 +403,32 @@ namespace Message_Board_Application
         private void tbT2_TextChanged(object sender, EventArgs e)
         {
             text2.Text = tbT2.Text;
+        }
+
+
+        private void cbLedStyle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbLedStyle.SelectedIndex == 0)
+            {
+                foreach (Label lbl in ledLabels)
+                {
+                    lbl.Size = new Size(28, 15);
+                }
+            }
+            else if(cbLedStyle.SelectedIndex == 1)
+            {
+                foreach (Label lbl in ledLabels)
+                {
+                    lbl.Size = new Size(56, 15);
+                }
+            }
+            else if (cbLedStyle.SelectedIndex == 2)
+            {
+                foreach (Label lbl in ledLabels)
+                {
+                    lbl.Size = new Size(78, 15);
+                }
+            }
         }
 
         // *** GENERAL METHODS START ***
@@ -446,7 +491,6 @@ namespace Message_Board_Application
             }
         }
 
-
         //btnSettings's background image - change it if you want
         private void btnSettingsImage()
         {
@@ -461,12 +505,9 @@ namespace Message_Board_Application
             }
         }
 
-
         // *** GENERAL METHODS END ***
 
         // *** BUTTONS START ***
-
-
 
         //Start/Stop Button
         private void btnControl_Click(object sender, EventArgs e)
@@ -505,8 +546,6 @@ namespace Message_Board_Application
             btnColorT1.BackColor = t1ColorDialog.Color;
             text1.ForeColor = t1ColorDialog.Color;
         }
-
-        
 
         private void btnColorT2_Click(object sender, EventArgs e)
         {
@@ -547,7 +586,6 @@ namespace Message_Board_Application
                 this.Size = new Size(1280, 720);
             }
         }
-
         //SETTINGS END
 
         // *** BUTTONS END ***
