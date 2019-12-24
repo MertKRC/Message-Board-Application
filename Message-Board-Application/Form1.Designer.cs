@@ -90,8 +90,10 @@
             this.text2Temp = new System.Windows.Forms.Label();
             this.text1Temp = new System.Windows.Forms.Label();
             this.btnSettings = new System.Windows.Forms.PictureBox();
-            this.text2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.text1 = new System.Windows.Forms.Label();
+            this.text2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnFontT2 = new System.Windows.Forms.Button();
@@ -126,6 +128,7 @@
             this.text1Label2 = new System.Windows.Forms.Label();
             this.text1Label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label59 = new System.Windows.Forms.Label();
             this.btnResetAll = new System.Windows.Forms.Button();
             this.numTimerPeriod = new System.Windows.Forms.NumericUpDown();
             this.btnLedOffColor = new System.Windows.Forms.Button();
@@ -146,9 +149,7 @@
             this.t2fontDialog = new System.Windows.Forms.FontDialog();
             this.t1SpeedTimer = new System.Windows.Forms.Timer(this.components);
             this.t2SpeedTimer = new System.Windows.Forms.Timer(this.components);
-            this.label59 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.generalTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             this.panel2.SuspendLayout();
@@ -713,16 +714,19 @@
             this.btnSettings.TabStop = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
-            // text2
+            // panel3
             // 
-            this.text2.AutoSize = true;
-            this.text2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.text2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.text2.Location = new System.Drawing.Point(506, 225);
-            this.text2.Name = "text2";
-            this.text2.Size = new System.Drawing.Size(321, 31);
-            this.text2.TabIndex = 58;
-            this.text2.Text = "Work hard, stay humble";
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1261, 45);
+            this.panel3.TabIndex = 62;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(4, 447);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1260, 234);
+            this.panel4.TabIndex = 63;
             // 
             // text1
             // 
@@ -734,6 +738,17 @@
             this.text1.Size = new System.Drawing.Size(198, 31);
             this.text1.TabIndex = 57;
             this.text1.Text = "Mert KARACA";
+            // 
+            // text2
+            // 
+            this.text2.AutoSize = true;
+            this.text2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.text2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.text2.Location = new System.Drawing.Point(506, 225);
+            this.text2.Name = "text2";
+            this.text2.Size = new System.Drawing.Size(321, 31);
+            this.text2.TabIndex = 58;
+            this.text2.Text = "Work hard, stay humble";
             // 
             // panel2
             // 
@@ -1155,6 +1170,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Display";
             // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(250, 27);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(75, 16);
+            this.label59.TabIndex = 17;
+            this.label59.Text = "Reset All:";
+            // 
             // btnResetAll
             // 
             this.btnResetAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
@@ -1177,6 +1201,7 @@
             this.numTimerPeriod.Name = "numTimerPeriod";
             this.numTimerPeriod.Size = new System.Drawing.Size(102, 22);
             this.numTimerPeriod.TabIndex = 12;
+            this.numTimerPeriod.ValueChanged += new System.EventHandler(this.numTimerPeriod_ValueChanged);
             // 
             // btnLedOffColor
             // 
@@ -1303,28 +1328,10 @@
             // 
             this.t2SpeedTimer.Tick += new System.EventHandler(this.t2SpeedTimer_Tick);
             // 
-            // label59
+            // generalTimer
             // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(250, 27);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(75, 16);
-            this.label59.TabIndex = 17;
-            this.label59.Text = "Reset All:";
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1261, 45);
-            this.panel3.TabIndex = 62;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(4, 447);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1260, 234);
-            this.panel4.TabIndex = 63;
+            this.generalTimer.Interval = 1000;
+            this.generalTimer.Tick += new System.EventHandler(this.generalTimer_Tick);
             // 
             // Form1
             // 
@@ -1482,6 +1489,7 @@
         private System.Windows.Forms.Timer t2SpeedTimer;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Timer generalTimer;
     }
 }
 

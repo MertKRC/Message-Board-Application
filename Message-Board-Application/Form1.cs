@@ -14,7 +14,6 @@ namespace Message_Board_Application
     {
         String appPath;
         int t1Direction, t2Direction;
-        int t1x, t1y, t2x, t2y;
         //Color Map
         //Bootstrap Danger = 219, 53, 69
         //Bootstrap Success = 40, 167, 69
@@ -36,6 +35,8 @@ namespace Message_Board_Application
             resetComboBoxes();
             numUpDownBoundaries();
             numUpDownValue();
+            //ulong value to cap it
+            numTimerPeriod.Maximum = 18446744073709551614;
             this.MaximizeBox = false;
         }
 
@@ -125,6 +126,7 @@ namespace Message_Board_Application
             t1Reset();
             t2Reset();
             ledColorReset();
+            numTimerPeriod.Value = 0;
         }
 
         //Create ledLabels list from empty labels
@@ -403,6 +405,25 @@ namespace Message_Board_Application
             }
         }
 
+        ulong generalTimerValue;
+        private void numTimerPeriod_ValueChanged(object sender, EventArgs e)
+        {
+            generalTimerValue = Convert.ToUInt64(numTimerPeriod.Value);
+        }
+
+        private void generalTimer_Tick(object sender, EventArgs e)
+        {
+            if (generalTimerValue > 0)
+            {
+                generalTimerValue--;
+            }
+            if(generalTimerValue == 0)
+            {
+                btnControlMethod();
+            }
+            numTimerPeriod.Value = generalTimerValue;
+        }
+
         //Start/Stop Button Method
         private void btnControlMethod()
         {
@@ -411,14 +432,20 @@ namespace Message_Board_Application
                 btnControl.Text = "STOP";
                 btnControl.BackColor = Color.FromArgb(219, 53, 69);
                 timerStartStop(true);
+                if(generalTimerValue > 0)
+                {
+                    generalTimer.Enabled = true;
+                }
             }
             else
             {
                 btnControl.Text = "START";
                 btnControl.BackColor = Color.FromArgb(40, 167, 69);
                 timerStartStop(false);
+                generalTimer.Enabled = false;
             }
         }
+
 
         //btnSettings's background image - change it if you want
         private void btnSettingsImage()
@@ -433,6 +460,8 @@ namespace Message_Board_Application
             {
             }
         }
+
+
         // *** GENERAL METHODS END ***
 
         // *** BUTTONS START ***
@@ -449,7 +478,10 @@ namespace Message_Board_Application
         //Reset All
         private void btnResetAll_Click(object sender, EventArgs e)
         {
-            btnControlMethod();
+            if(btnControl.Text != "START")
+            {
+                btnControlMethod();
+            }
             resetAll();
         }
 
