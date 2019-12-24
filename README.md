@@ -16,4 +16,8 @@ Changed the app icon.
 
 More than half of all items were provided with functionality.
 
+Added functionality to reset button and default values.
+
+Added functionality to x-y numeric up down items.
+
 -------------------------------
