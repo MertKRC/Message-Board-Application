@@ -1031,6 +1031,7 @@
             this.yPosT1.Name = "yPosT1";
             this.yPosT1.Size = new System.Drawing.Size(105, 22);
             this.yPosT1.TabIndex = 12;
+            this.yPosT1.ValueChanged += new System.EventHandler(this.yPosT1_ValueChanged);
             // 
             // xPosT1
             // 
@@ -1040,6 +1041,7 @@
             this.xPosT1.Name = "xPosT1";
             this.xPosT1.Size = new System.Drawing.Size(105, 22);
             this.xPosT1.TabIndex = 11;
+            this.xPosT1.ValueChanged += new System.EventHandler(this.xPosT1_ValueChanged);
             // 
             // tbT1
             // 

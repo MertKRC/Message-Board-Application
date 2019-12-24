@@ -13,6 +13,8 @@ namespace Message_Board_Application
     public partial class Form1 : Form
     {
         String appPath;
+        int t1Direction, t2Direction;
+        int t1x, t1y, t2x, t2y;
         //Color Map
         //Bootstrap Danger = 219, 53, 69
         //Bootstrap Success = 40, 167, 69
@@ -32,8 +34,44 @@ namespace Message_Board_Application
             resetAll();
             timerStartStop(false);
             resetComboBoxes();
+            numUpDownBoundaries();
+            numUpDownValue();
             this.MaximizeBox = false;
         }
+
+        private void numUpDownBoundaries()
+        {
+            xPosT1.Maximum = 500;
+            xPosT1.Minimum = 0;
+            yPosT1.Maximum = 1280;
+            yPosT1.Minimum = 0 - text1.Size.Width;
+
+            xPosT2.Maximum = 500;
+            xPosT2.Minimum = 0;
+            yPosT2.Maximum = 1280;
+            yPosT2.Minimum = 0 - text2.Size.Width;
+        }
+
+        private void numUpDownValue()
+        {
+            xPosT1.Value = text1.Top;
+            yPosT1.Value = text1.Left;
+
+            xPosT2.Value = text2.Top;
+            yPosT2.Value = text2.Left;
+        }
+        
+
+        private void xPosT1_ValueChanged(object sender, EventArgs e)
+        {
+            text1.Top = Convert.ToInt32(xPosT1.Value);
+        }
+
+        private void yPosT1_ValueChanged(object sender, EventArgs e)
+        {
+            text1.Left = Convert.ToInt32(yPosT1.Value);
+        }
+
         private void t1ComboBoxes()
         {
             dirT1.SelectedIndex = 0;
@@ -86,6 +124,7 @@ namespace Message_Board_Application
         {
             t1Reset();
             t2Reset();
+            ledColorReset();
         }
 
         //Create ledLabels list from empty labels
@@ -96,6 +135,15 @@ namespace Message_Board_Application
             {
                 ledLabels.Add(lbl);
             }
+        }
+
+        private void ledColorReset()
+        {
+            ledOnColorDialog.Color = Color.White;
+            ledOffColorDialog.Color = Color.RoyalBlue;
+
+            btnLedOnColor.BackColor = ledOnColorDialog.Color;
+            btnLedOffColor.BackColor = ledOffColorDialog.Color;
         }
 
         //Led on/off Colors START
@@ -160,11 +208,7 @@ namespace Message_Board_Application
             }
         }
 
-        //Left To Right
-        //Right to Left
-        //Up to Down
-        //Down to Up
-        int t1Direction, t2Direction;
+
         private void dirT1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(dirT1.Text == "Left To Right")
@@ -205,7 +249,7 @@ namespace Message_Board_Application
             }
         }
 
-        public void text1Move()
+        private void text1Move()
         {
             //t1 direction check
             if (t1Direction == 1)
@@ -245,7 +289,7 @@ namespace Message_Board_Application
                 text1.Top = 50 - text1.Size.Height;
             }
         }
-        public void text2Move()
+        private void text2Move()
         {
             //t2 direction check
             if (t2Direction == 1)
@@ -293,6 +337,7 @@ namespace Message_Board_Application
             {
                 text1Move();
             }
+            numUpDownValue();
         }
 
         private void t2SpeedTimer_Tick(object sender, EventArgs e)
@@ -301,6 +346,7 @@ namespace Message_Board_Application
             {
                 text2Move();
             }
+            numUpDownValue();
         }
         //Text Animation END
 
@@ -338,17 +384,18 @@ namespace Message_Board_Application
             text2.Text = tbT2.Text;
         }
 
-        
-        // *** BUTTONS START ***
-        public void timerStartStop(bool startAll)
+        // *** GENERAL METHODS START ***
+
+        //timerStartStop Method
+        private void timerStartStop(bool startAll)
         {
-            if(startAll == true)
+            if (startAll == true)
             {
                 ledTimer.Enabled = true;
                 t1SpeedTimer.Enabled = true;
                 t2SpeedTimer.Enabled = true;
             }
-            else if(startAll == false)
+            else if (startAll == false)
             {
                 ledTimer.Enabled = false;
                 t1SpeedTimer.Enabled = false;
@@ -356,7 +403,8 @@ namespace Message_Board_Application
             }
         }
 
-        public void btnControlMethod()
+        //Start/Stop Button Method
+        private void btnControlMethod()
         {
             if (btnControl.Text == "START")
             {
@@ -372,8 +420,26 @@ namespace Message_Board_Application
             }
         }
 
+        //btnSettings's background image - change it if you want
+        private void btnSettingsImage()
+        {
+            appPath = Application.StartupPath.ToString();
+            try
+            {
+                Image btnSettingsImg = new Bitmap(appPath + @"\Images\settingsImg.png");
+                btnSettings.BackgroundImage = btnSettingsImg;
+            }
+            catch
+            {
+            }
+        }
+        // *** GENERAL METHODS END ***
 
-        //Start Button
+        // *** BUTTONS START ***
+
+
+
+        //Start/Stop Button
         private void btnControl_Click(object sender, EventArgs e)
         {
             btnControlMethod();
@@ -407,6 +473,8 @@ namespace Message_Board_Application
             btnColorT1.BackColor = t1ColorDialog.Color;
             text1.ForeColor = t1ColorDialog.Color;
         }
+
+        
 
         private void btnColorT2_Click(object sender, EventArgs e)
         {
@@ -447,25 +515,6 @@ namespace Message_Board_Application
                 this.Size = new Size(1280, 720);
             }
         }
-
-        //btnSettings's background image - change it if you want
-        private void btnSettingsImage()
-        {
-            appPath = Application.StartupPath.ToString();
-            try
-            {
-                Image btnSettingsImg = new Bitmap(appPath + @"\Images\settingsImg.png");
-                btnSettings.BackgroundImage = btnSettingsImg;
-            }
-            catch
-            {
-            }
-        }
-
-
-
-
-
 
         //SETTINGS END
 
