@@ -33,4 +33,8 @@ Added option to change background color of form.
 
 Added function to settings button that if it clicked, bottom led panel will drop to bottom of the form.
 
+When Return button is pressed in password textbox on login screen, login button is triggered.
+
+Basic visual optimizations.
+
 -------------------------------
