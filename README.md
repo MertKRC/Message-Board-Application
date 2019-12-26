@@ -3,8 +3,8 @@ Message board application for Piri Reis University.
 
 The program basically simulates the control panel of an airport's message boards.
 
-### Quick Preview
-![Message-Board-Application](gif link will come after beta)
+### Quick Preview ( 1.6x Speed )
+![Message-Board-Application](https://raw.githubusercontent.com/MertKRC/Message-Board-Application/master/Github/message-board-application.gif?token=ALMLKIFWAOBC2UWCY3KDOD26AJ2ZA)
 
 Change Log:
 -------------------------------
@@ -19,5 +19,11 @@ More than half of all items were provided with functionality.
 Added functionality to reset button and default values.
 
 Added functionality to x-y numeric up down items.
+
+Added functionality to timer period. Changed reset buttons functionality.
+
+The features of all items have been activated. Form 1 compleated. Login form will come soon.
+
+Created new form for login. Added Github GIF to visualize it. Project's Beta 1.0 has been published.
 
 -------------------------------
