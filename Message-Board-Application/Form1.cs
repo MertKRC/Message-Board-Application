@@ -14,13 +14,46 @@ namespace Message_Board_Application
     {
         String appPath;
         //Create ledLabels list from empty labels
-        List<Label> ledLabels = new List<Label>();
         int t1Direction, t2Direction;
         //Color Map
         //Bootstrap Danger = 219, 53, 69
         //Bootstrap Success = 40, 167, 69
         //Bootstrap Warning
         //Bootstrap Dark
+
+
+        List<Label> bottomLabels = new List<Label>();
+        private void bottomLedsSelect()
+        {
+            foreach (Label lbl in this.bottomLedPanel.Controls.OfType<Label>()
+                .Where(x => x.Text == ""))
+            {
+                bottomLabels.Add(lbl);
+            }
+        }
+
+        List<Label> topLabels = new List<Label>();
+        private void topLabelsSelect()
+        {
+            foreach (Label lbl in this.topLedPanel.Controls.OfType<Label>()
+                .Where(x => x.Text == ""))
+            {
+                topLabels.Add(lbl);
+            }
+        }
+
+        List<Label> ledLabels = new List<Label>();
+        public void ledLabelsSelect()
+        {
+            foreach (Label lbl in this.topLedPanel.Controls.OfType<Label>())
+            {
+                ledLabels.Add(lbl);
+            }
+            foreach (Label lbl in this.bottomLedPanel.Controls.OfType<Label>())
+            {
+                ledLabels.Add(lbl);
+            }
+        }
 
         public Form1()
         {
@@ -29,6 +62,8 @@ namespace Message_Board_Application
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            settingsPanel.BackColor = Color.FromArgb(52, 58, 64);
+            bottomLedsSelect();
             btnSettingsImage();
             getTempTexts();
             ledLabelsSelect();
@@ -44,12 +79,12 @@ namespace Message_Board_Application
 
         private void numUpDownBoundaries()
         {
-            xPosT1.Maximum = 500;
+            xPosT1.Maximum = 720;
             xPosT1.Minimum = 0;
             yPosT1.Maximum = 1280;
             yPosT1.Minimum = 0 - text1.Size.Width;
 
-            xPosT2.Maximum = 500;
+            xPosT2.Maximum = 720;
             xPosT2.Minimum = 0;
             yPosT2.Maximum = 1280;
             yPosT2.Minimum = 0 - text2.Size.Width;
@@ -138,23 +173,20 @@ namespace Message_Board_Application
             t2ComboBoxes();
         }
 
+        public void mainReset()
+        {
+            this.BackColor = Color.FromArgb(52, 58, 64);
+            btnDisplayColor.BackColor = this.BackColor;
+            numTimerPeriod.Value = 0;
+            cbLedStyle.SelectedIndex = 2;
+        }
+
         public void resetAll()
         {
             t1Reset();
             t2Reset();
             ledColorReset();
-            numTimerPeriod.Value = 0;
-            cbLedStyle.SelectedIndex = 2;
-        }
-
-        //Select empty lables to make them LED
-        public void ledLabelsSelect()
-        {
-            foreach (Label lbl in this.panel1.Controls.OfType<Label>()
-                .Where(x => x.Text == ""))
-            {
-                ledLabels.Add(lbl);
-            }
+            mainReset();
         }
 
         //Reset all LED colors to default value
@@ -229,7 +261,6 @@ namespace Message_Board_Application
             }
         }
 
-
         private void dirT1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(dirT1.Text == "Left To Right")
@@ -303,9 +334,9 @@ namespace Message_Board_Application
             //t1 height boundary
             if (text1.Top+text1.Size.Height <= 50)
             {
-                text1.Top = 430 + text1.Size.Height;
+                text1.Top = bottomLedPanel.Top + text1.Size.Height;
             }
-            else if(text1.Top >= 430 + text1.Size.Height)
+            else if(text1.Top >= bottomLedPanel.Top + text1.Size.Height)
             {
                 text1.Top = 50 - text1.Size.Height;
             }
@@ -343,9 +374,9 @@ namespace Message_Board_Application
             //t2 height boundary
             if (text2.Top + text2.Size.Height <= 50)
             {
-                text2.Top = 430 + text2.Size.Height;
+                text2.Top = bottomLedPanel.Top + text2.Size.Height;
             }
-            else if (text2.Top >= 430 + text2.Size.Height)
+            else if (text2.Top >= bottomLedPanel.Top + text2.Size.Height)
             {
                 text2.Top = 50 - text2.Size.Height;
             }
@@ -569,21 +600,30 @@ namespace Message_Board_Application
             text2.Font = t2fontDialog.Font;
         }
 
+        private void btnDisplayColor_Click(object sender, EventArgs e)
+        {
+            displayColorDialog.ShowDialog();
+            this.BackColor = displayColorDialog.Color;
+            btnDisplayColor.BackColor = this.BackColor;
+        }
+
         //FONT FAMILY END
 
         //SETTINGS START
         //btnSettings
+
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            if(panel2.Visible == true)
+            if(settingsPanel.Visible == true)
             {
-                panel2.Hide();
-                this.Size = new Size(1280, 550);
+                settingsPanel.Visible = false;
+                bottomLedPanel.Location = new Point(3, 626);
+
             }
             else
             {
-                panel2.Show();
-                this.Size = new Size(1280, 720);
+                settingsPanel.Visible = true;
+                bottomLedPanel.Location = new Point(3, 441);
             }
         }
         //SETTINGS END
