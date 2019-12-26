@@ -22,6 +22,15 @@ namespace Message_Board_Application
             this.MaximizeBox = false;
         }
         static int count = 0;
+
+        private void passwordText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == Convert.ToChar(Keys.Return))
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             count++;

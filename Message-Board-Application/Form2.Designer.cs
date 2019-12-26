@@ -64,6 +64,7 @@
             this.passwordText.Size = new System.Drawing.Size(177, 31);
             this.passwordText.TabIndex = 3;
             this.passwordText.UseSystemPasswordChar = true;
+            this.passwordText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordText_KeyDown);
             // 
             // passwordLabel
             // 

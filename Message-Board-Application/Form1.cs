@@ -617,7 +617,7 @@ namespace Message_Board_Application
             if(settingsPanel.Visible == true)
             {
                 settingsPanel.Visible = false;
-                bottomLedPanel.Location = new Point(3, 626);
+                bottomLedPanel.Location = new Point(3, 635);
 
             }
             else
